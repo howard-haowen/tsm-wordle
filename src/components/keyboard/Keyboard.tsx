@@ -11,8 +11,6 @@ type Props = {
   guesses: string[]
 }
 
-const O_LEN = ORTHOGRAPHY.length
-
 export const Keyboard = ({ onChar, onDelete, onEnter, guesses }: Props) => {
   const charStatuses = getStatuses(guesses)
 

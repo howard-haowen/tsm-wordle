@@ -1,6 +1,5 @@
 import { CharStatus } from '../../lib/statuses'
 import classnames from 'classnames'
-import { ORTHOGRAPHY } from '../../constants/orthography'
 
 type Props = {
   status: CharStatus,
