@@ -2,6 +2,7 @@ import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { Cell } from '../grid/Cell'
 import { XCircleIcon } from '@heroicons/react/outline'
+import { CONFIG } from '../../constants/config';
 
 type Props = {
   isOpen: boolean
@@ -62,7 +63,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                      Guess the WORDLE in 6 tries. After each guess, the color
+                      Guess the WORDLE in {CONFIG.tries} tries. After each guess, the color
                       of the tiles will change to show how close your guess was
                       to the word.
                     </p>

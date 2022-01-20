@@ -1,4 +1,5 @@
 import { getGuessStatuses } from '../../lib/statuses'
+import { ORTHOGRAPHY_PATTERN } from '../../lib/tokenizer'
 import { MiniCell } from './MiniCell'
 
 type Props = {
@@ -10,8 +11,8 @@ export const MiniCompletedRow = ({ guess }: Props) => {
 
   return (
     <div className="flex justify-center mb-1">
-      {guess.split('').map((letter, i) => (
-        <MiniCell key={i} status={statuses[i]} />
+      {guess.split(ORTHOGRAPHY_PATTERN).filter(char => char).map((letter, i) => (
+        <MiniCell key={i} status={statuses[i]} letter={letter} />
       ))}
     </div>
   )

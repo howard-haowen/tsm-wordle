@@ -1,11 +1,13 @@
 import { CharStatus } from '../../lib/statuses'
 import classnames from 'classnames'
+import { ORTHOGRAPHY } from '../../constants/orthography'
 
 type Props = {
-  status: CharStatus
+  status: CharStatus,
+  letter: string
 }
 
-export const MiniCell = ({ status }: Props) => {
+export const MiniCell = ({ status, letter }: Props) => {
   const classes = classnames(
     'w-10 h-10 border-solid border-2 border-slate-200 flex items-center justify-center mx-0.5 text-lg font-bold rounded',
     {
@@ -17,7 +19,7 @@ export const MiniCell = ({ status }: Props) => {
 
   return (
     <>
-      <div className={classes}></div>
+      <div className={classes}>{letter}</div>
     </>
   )
 }

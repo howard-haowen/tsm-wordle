@@ -1,4 +1,5 @@
 import { getGuessStatuses } from '../../lib/statuses'
+import { ORTHOGRAPHY_PATTERN } from '../../lib/tokenizer'
 import { Cell } from './Cell'
 
 type Props = {
@@ -10,7 +11,7 @@ export const CompletedRow = ({ guess }: Props) => {
 
   return (
     <div className="flex justify-center mb-1">
-      {guess.split('').map((letter, i) => (
+      {guess.split(ORTHOGRAPHY_PATTERN).filter(i => i).map((letter, i) => (
         <Cell key={i} value={letter} status={statuses[i]} />
       ))}
     </div>

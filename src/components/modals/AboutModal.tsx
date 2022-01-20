@@ -61,14 +61,20 @@ export const AboutModal = ({ isOpen, handleClose }: Props) => {
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                      This is an open source clone of the game Wordle -{' '}
-                      <a
+                      This is an open source clone of the game Wordle adapted to Gitksan by <a href="https://aidanpine.ca" className="underline font-bold">Aidan Pine</a> -{' '}
+
+                      check out   <a
                         href="https://github.com/hannahcode/wordle"
                         className="underline font-bold"
+                      >the original code</a> by <a href="https://www.hannahmariepark.com/" className="underline font-bold">Hannah Park</a>
+                      {' '}or have a look at{' '}
+                      <a
+                        href="https://github.com/roedoejet/wordle"
+                        className="underline font-bold"
                       >
-                        check out the code here
-                      </a>{' '}
-                      and{' '}
+                        my fork
+                      </a>{' '}and customize it for another language! If you're stuck and want to look up some Gitksan words, try <a href="https://mothertongues.org/gitksan" className="underline font-bold">the Gitksan online dictionary</a>{'. '}Or,
+                      {' you can also '}
                       <a
                         href="https://www.powerlanguage.co.uk/wordle/"
                         className="underline font-bold"

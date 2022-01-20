@@ -11,6 +11,8 @@ import {
   loadGameStateFromLocalStorage,
   saveGameStateToLocalStorage,
 } from './lib/localStorage'
+import { CONFIG } from './constants/config'
+import { ORTHOGRAPHY_PATTERN } from './lib/tokenizer'
 
 function App() {
   const [currentGuess, setCurrentGuess] = useState('')
@@ -43,7 +45,7 @@ function App() {
   }, [isGameWon])
 
   const onChar = (value: string) => {
-    if (currentGuess.length < 5 && guesses.length < 6) {
+    if (currentGuess.split(ORTHOGRAPHY_PATTERN).filter(i => i).length < 5 && guesses.length < 6) {
       setCurrentGuess(`${currentGuess}${value}`)
     }
   }
@@ -59,10 +61,9 @@ function App() {
         setIsWordNotFoundAlertOpen(false)
       }, 2000)
     }
-
     const winningWord = isWinningWord(currentGuess)
 
-    if (currentGuess.length === 5 && guesses.length < 6 && !isGameWon) {
+    if (currentGuess.split(ORTHOGRAPHY_PATTERN).filter(i => i).length === 5 && guesses.length < 6 && !isGameWon) {
       setGuesses([...guesses, currentGuess])
       setCurrentGuess('')
 
@@ -92,7 +93,7 @@ function App() {
         variant="success"
       />
       <div className="flex w-80 mx-auto items-center mb-8">
-        <h1 className="text-xl grow font-bold">Not Wordle</h1>
+        <h1 className="text-xl grow font-bold">Not Wordle - {CONFIG.language}</h1>
         <InformationCircleIcon
           className="h-6 w-6 cursor-pointer"
           onClick={() => setIsInfoModalOpen(true)}
