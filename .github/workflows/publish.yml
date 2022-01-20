@@ -1,0 +1,22 @@
+# This workflows will upload a Python Package using Twine when a release is created
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches: [release]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: install
+        run: npm install
+
+      - name: build
+        run: npm run-script build
+
+      - name: deploy
+        uses: JamesIves/github-pages-deploy-action@3.5.7
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: build
