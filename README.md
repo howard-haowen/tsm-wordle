@@ -10,7 +10,7 @@ _To adapt for your language:_
 2. Change the file in `src/constants/wordlist.ts` to use your langauge's 5-letter words (I am hoping to customize this for different-length words in the future).
 3. Change the file in `src/constants/validGuesses.ts` to include all valid 5-letter guesses for your language.
 4. Change the file in `src/constants/config.ts` to include meta data about your language.
-5. Publish on GitHub Pages by changing the `homepage` key in `package.json` and running `npm run deploy`. See [here](https://github.com/gitname/react-gh-pages) for more details.
+5. Publish on GitHub Pages by changing the `homepage` key in `package.json` and running `npm run deploy`. Change the CNAME file in the deploy script in `package.json` first. See [here](https://github.com/gitname/react-gh-pages) for more details.
 
 ## On to the original stuff...
 
