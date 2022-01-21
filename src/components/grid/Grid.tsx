@@ -3,8 +3,8 @@ import { CurrentRow } from './CurrentRow'
 import { EmptyRow } from './EmptyRow'
 
 type Props = {
-  guesses: string[]
-  currentGuess: string
+  guesses: string[][]
+  currentGuess: string[]
 }
 
 export const Grid = ({ guesses, currentGuess }: Props) => {

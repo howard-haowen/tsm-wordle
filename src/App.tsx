@@ -12,10 +12,9 @@ import {
   saveGameStateToLocalStorage,
 } from './lib/localStorage'
 import { CONFIG } from './constants/config'
-import { ORTHOGRAPHY_PATTERN } from './lib/tokenizer'
 
 function App() {
-  const [currentGuess, setCurrentGuess] = useState('')
+  const [currentGuess, setCurrentGuess] = useState<Array<string>>([])
   const [isGameWon, setIsGameWon] = useState(false)
   const [isWinModalOpen, setIsWinModalOpen] = useState(false)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
@@ -23,12 +22,12 @@ function App() {
   const [isWordNotFoundAlertOpen, setIsWordNotFoundAlertOpen] = useState(false)
   const [isGameLost, setIsGameLost] = useState(false)
   const [shareComplete, setShareComplete] = useState(false)
-  const [guesses, setGuesses] = useState<string[]>(() => {
+  const [guesses, setGuesses] = useState<string[][]>(() => {
     const loaded = loadGameStateFromLocalStorage()
     if (loaded?.solution !== solution) {
       return []
     }
-    if (loaded.guesses.includes(solution)) {
+    if (loaded.guesses.map(guess => guess.join('')).includes(solution)) {
       setIsGameWon(true)
     }
     return loaded.guesses
@@ -45,8 +44,9 @@ function App() {
   }, [isGameWon])
 
   const onChar = (value: string) => {
-    if (currentGuess.split(ORTHOGRAPHY_PATTERN).filter(i => i).length < 5 && guesses.length < 6) {
-      setCurrentGuess(`${currentGuess}${value}`)
+    if (currentGuess.length < 5 && guesses.length < 6) {
+      let newGuess = currentGuess.concat([value])
+      setCurrentGuess(newGuess)
     }
   }
 
@@ -55,17 +55,17 @@ function App() {
   }
 
   const onEnter = () => {
-    if (!isWordInWordList(currentGuess)) {
+    if (!isWordInWordList(currentGuess.join(''))) {
       setIsWordNotFoundAlertOpen(true)
       return setTimeout(() => {
         setIsWordNotFoundAlertOpen(false)
       }, 2000)
     }
-    const winningWord = isWinningWord(currentGuess)
+    const winningWord = isWinningWord(currentGuess.join(''))
 
-    if (currentGuess.split(ORTHOGRAPHY_PATTERN).filter(i => i).length === 5 && guesses.length < 6 && !isGameWon) {
+    if (currentGuess.length === 5 && guesses.length < 6 && !isGameWon) {
       setGuesses([...guesses, currentGuess])
-      setCurrentGuess('')
+      setCurrentGuess([])
 
       if (winningWord) {
         return setIsGameWon(true)

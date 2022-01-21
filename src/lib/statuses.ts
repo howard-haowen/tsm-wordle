@@ -7,12 +7,12 @@ export type CharStatus = 'absent' | 'present' | 'correct'
 export type CharValue = typeof ORTHOGRAPHY[number];
 
 export const getStatuses = (
-  guesses: string[]
+  guesses: string[][]
 ): { [key: string]: CharStatus } => {
   const charObj: { [key: string]: CharStatus } = {}
   const solutionChars = solution.split(ORTHOGRAPHY_PATTERN).filter(i => i)
   guesses.forEach((word) => {
-    word.split(ORTHOGRAPHY_PATTERN).filter(i => i).forEach((letter, i) => {
+    word.forEach((letter, i) => {
       if (!solutionChars.includes(letter)) {
         // make status absent
         return (charObj[letter] = 'absent')
@@ -33,9 +33,9 @@ export const getStatuses = (
   return charObj
 }
 
-export const getGuessStatuses = (guess: string): CharStatus[] => {
+export const getGuessStatuses = (guess: string[]): CharStatus[] => {
   const splitSolution = solution.split(ORTHOGRAPHY_PATTERN).filter(i => i)
-  const splitGuess = guess.split(ORTHOGRAPHY_PATTERN).filter(i => i)
+  const splitGuess = guess
 
   const solutionCharsTaken = splitSolution.map((_) => false)
 

@@ -8,7 +8,7 @@ type Props = {
   onChar: (value: string) => void
   onDelete: () => void
   onEnter: () => void
-  guesses: string[]
+  guesses: string[][]
 }
 
 export const Keyboard = ({ onChar, onDelete, onEnter, guesses }: Props) => {

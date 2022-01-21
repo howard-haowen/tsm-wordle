@@ -1,7 +1,7 @@
 import { MiniCompletedRow } from './MiniCompletedRow'
 
 type Props = {
-  guesses: string[]
+  guesses: string[][]
 }
 
 export const MiniGrid = ({ guesses }: Props) => {
