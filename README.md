@@ -1,5 +1,19 @@
 # Wordle Clone
 
+## Changes in this fork
+
+I've adapted this code to allow for simply adapting it to another language. In my case I adapted it to Gitksan. I've also added a script for publishing on GitHub Pages.
+
+_To adapt for your language:_
+
+1. Change the file in `src/constants/orthography.ts` to use your language's writing system.
+2. Change the file in `src/constants/wordlist.ts` to use your langauge's 5-letter words (I am hoping to customize this for different-length words in the future).
+3. Change the file in `src/constants/validGuesses.ts` to include all valid 5-letter guesses for your language.
+4. Change the file in `src/constants/config.ts` to include meta data about your language.
+5. Publish on GitHub Pages by changing the `homepage` key in `package.json` and running `npm run deploy`. See [here](https://github.com/gitname/react-gh-pages) for more details.
+
+## On to the original stuff...
+
 - Go play the real Wordle [here](https://www.powerlanguage.co.uk/wordle/)
 - Read the story behind it [here](https://www.nytimes.com/2022/01/03/technology/wordle-word-game-creator.html)
 - Try a demo of this clone project [here](https://wordle.hannahmariepark.com)
@@ -34,14 +48,6 @@ $ docker build -t notwordle .
 $ docker run -d -p 3000:3000 notwordle
 ```
 open http://localhost:3000 in browser.
-
-_To adapt for your language
-
-1. Change the file in `src/constants/orthography.ts` to use your language's writing system.
-2. Change the file in `src/constants/wordlist.ts` to use your langauge's 5-letter words (I am hoping to customize this for different-length words in the future).
-3. Change the file in `src/constants/validGuesses.ts` to include all valid 5-letter guesses for your language.
-4. Change the file in `src/constants/config.ts` to include meta data about your language.
-5. Publish on GitHub Pages by changing the `homepage` key in `package.json` and running `npm run deploy`. See [here](https://github.com/gitname/react-gh-pages) for more details.
 
 ### I'm looking for a junior developer role
 Please feel free to contact me on [linkedin](https://www.linkedin.com/in/hannahpark1000/) and learn more about me [here](https://www.hannahmariepark.com/)
