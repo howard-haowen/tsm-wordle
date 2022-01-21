@@ -1,4 +1,5 @@
 import { InformationCircleIcon } from '@heroicons/react/outline'
+import Dropdown from 'react-bootstrap/Dropdown'
 import { useState, useEffect } from 'react'
 import { Alert } from './components/alerts/Alert'
 import { Grid } from './components/grid/Grid'
@@ -11,7 +12,8 @@ import {
   loadGameStateFromLocalStorage,
   saveGameStateToLocalStorage,
 } from './lib/localStorage'
-import { CONFIG } from './constants/config'
+import { CONFIG, CONFIGM } from './constants/config'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [currentGuess, setCurrentGuess] = useState<Array<string>>([])
@@ -126,6 +128,17 @@ function App() {
         isOpen={isAboutModalOpen}
         handleClose={() => setIsAboutModalOpen(false)}
       />
+      {
+        Object.keys(CONFIGM).length > 1 && <Dropdown className="mx-auto mt-8 flex items-center px-2.5 py-1.5 text-xs font-medium rounded focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <Dropdown.Toggle variant="success" id="dropdown-basic" className="mx-auto mt-8 flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Select a Language
+          </Dropdown.Toggle>
+
+          <Dropdown.Menu>
+            {Object.keys(CONFIGM).map((key) => (<Dropdown.Item onClick={() => setIsAboutModalOpen(true)}>{CONFIGM[key].language}</Dropdown.Item>))}
+          </Dropdown.Menu>
+        </Dropdown>
+      }
 
       <button
         type="button"
@@ -134,6 +147,16 @@ function App() {
       >
         About this game
       </button>
+      <div className="dd-wrapper">
+        <div className="dd-header">
+          <div className="dd-header-title"></div>
+        </div>
+        <div className="dd-list">
+          <button className="dd-list-item"></button>
+          <button className="dd-list-item"></button>
+          <button className="dd-list-item"></button>
+        </div>
+      </div>
     </div>
   )
 }
