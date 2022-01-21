@@ -11,7 +11,9 @@ import {
   loadGameStateFromLocalStorage,
   saveGameStateToLocalStorage,
 } from './lib/localStorage'
+
 import { CONFIG } from './constants/config'
+import ReactGA from 'react-ga';
 
 function App() {
   const [currentGuess, setCurrentGuess] = useState<Array<string>>([])
@@ -32,6 +34,11 @@ function App() {
     }
     return loaded.guesses
   })
+
+  const TRACKING_ID = CONFIG.googleAnalytics; // YOUR_OWN_TRACKING_ID
+
+  ReactGA.initialize(TRACKING_ID);
+  ReactGA.pageview(window.location.pathname);
 
   useEffect(() => {
     saveGameStateToLocalStorage({ guesses, solution })
