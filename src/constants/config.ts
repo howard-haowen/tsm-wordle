@@ -1,4 +1,5 @@
 export const CONFIG = {
     tries: 6,
-    language: "Gitksan"
+    language: "Gitksan",
+    wordLength: 5
 }

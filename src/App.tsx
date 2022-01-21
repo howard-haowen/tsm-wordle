@@ -44,7 +44,7 @@ function App() {
   }, [isGameWon])
 
   const onChar = (value: string) => {
-    if (currentGuess.length < 5 && guesses.length < 6) {
+    if (currentGuess.length < CONFIG.wordLength && guesses.length < CONFIG.tries) {
       let newGuess = currentGuess.concat([value])
       setCurrentGuess(newGuess)
     }
@@ -63,7 +63,7 @@ function App() {
     }
     const winningWord = isWinningWord(currentGuess.join(''))
 
-    if (currentGuess.length === 5 && guesses.length < 6 && !isGameWon) {
+    if (currentGuess.length === CONFIG.wordLength && guesses.length < CONFIG.tries && !isGameWon) {
       setGuesses([...guesses, currentGuess])
       setCurrentGuess([])
 
@@ -71,7 +71,7 @@ function App() {
         return setIsGameWon(true)
       }
 
-      if (guesses.length === 5) {
+      if (guesses.length === (CONFIG.tries - 1)) {
         setIsGameLost(true)
         return setTimeout(() => {
           setIsGameLost(false)
