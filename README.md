@@ -7,12 +7,12 @@ I've adapted this code to allow for simply adapting it to another language. In m
 _To adapt for your language:_
 
 1. Change the file in `src/constants/orthography.ts` to use your language's writing system.
-2. Change the file in `src/constants/wordlist.ts` to use your langauge's 5-letter words (I am hoping to customize this for different-length words in the future).
-3. Change the file in `src/constants/validGuesses.ts` to include all valid 5-letter guesses for your language.
+2. Change the file in `src/constants/wordlist.ts` to use your language's words.
+3. Change the file in `src/constants/validGuesses.ts` to include all valid guesses for your language.
 4. Change the file in `src/constants/config.ts` to include meta data about your language. If your language needs words longer or shorter than 5, you can set that in this file and also set the number of tries.
 5. Publish on GitHub Pages by changing the `homepage` key in `package.json` and running `npm run deploy`. Change the CNAME file in the deploy script in `package.json` first. See [here](https://github.com/gitname/react-gh-pages) for more details.
 
-## On to the original stuff...
+## On to the original stuff from @hannahcode...
 
 - Go play the real Wordle [here](https://www.powerlanguage.co.uk/wordle/)
 - Read the story behind it [here](https://www.nytimes.com/2022/01/03/technology/wordle-word-game-creator.html)
