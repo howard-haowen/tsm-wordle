@@ -73,7 +73,7 @@ export const AboutModal = ({ isOpen, handleClose }: Props) => {
                         className="underline font-bold"
                       >
                         my fork
-                      </a>{' '}and customize it for another language! If you're stuck and want to look up some Gitksan words, try <a href="https://mothertongues.org/gitksan" className="underline font-bold">the Gitksan online dictionary</a>{'. '}Or,
+                      </a>{' '}and customize it for another language! If you're stuck and want to look up some Gitksan words, try <a href="https://mothertongues.org/gitksan" className="underline font-bold">the Gitksan online dictionary</a>{' which has words from a number of sources including the 1973 Lonnie Hindle & Bruce Rigsby dictionary. '}Or,
                       {' you can also '}
                       <a
                         href="https://www.powerlanguage.co.uk/wordle/"
