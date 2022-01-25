@@ -4,6 +4,7 @@
     "homepage": "https://gitksan-wordle.mothertongues.org",
     "private": true,
     "dependencies": {
+        "@bcgov/bc-sans": "^1.0.1",
         "@headlessui/react": "^1.4.2",
         "@heroicons/react": "^1.0.5",
         "@testing-library/jest-dom": "^5.16.1",
