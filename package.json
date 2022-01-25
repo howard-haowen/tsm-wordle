@@ -1,7 +1,7 @@
 {
     "name": "wordle",
     "version": "0.1.0",
-    "homepage": "https://gitksan-wordle.mothertongues.org",
+    "homepage": "https://roedoejet.github.io/wordle",
     "private": true,
     "dependencies": {
         "@bcgov/bc-sans": "^1.0.1",
@@ -25,7 +25,7 @@
     "scripts": {
         "start": "react-scripts start",
         "predeploy": "npm run build",
-        "deploy": "echo 'gitksan-wordle.mothertongues.org' > ./build/CNAME && gh-pages -d build",
+        "deploy": "gh-pages -d build",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"

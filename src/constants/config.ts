@@ -1,6 +1,10 @@
 export const CONFIG = {
     tries: 6,
-    language: "Gitksan",
+    language: "YourLanguageHere",
     wordLength: 5,
-    googleAnalytics: ""
+    googleAnalytics: "",
+    author: "YourNameHere",
+    authorWebsite: "YourLinkHere",
+    wordListSource: "YourDictionarySource",
+    wordListSourceLink: "YourDictionaryLink"
 }

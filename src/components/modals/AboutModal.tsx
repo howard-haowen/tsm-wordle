@@ -1,6 +1,7 @@
 import { Fragment } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { XCircleIcon } from '@heroicons/react/outline'
+import { CONFIG } from '../../constants/config'
 
 type Props = {
   isOpen: boolean
@@ -61,7 +62,7 @@ export const AboutModal = ({ isOpen, handleClose }: Props) => {
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                      This is an open source clone of the game Wordle adapted to Gitksan by <a href="https://aidanpine.ca" className="underline font-bold">Aidan Pine</a> -{' '}
+                      This is an open source clone of the game Wordle adapted to {CONFIG.language} by <a href={CONFIG.authorWebsite} className="underline font-bold">{CONFIG.author}</a> -{' '}
 
                       check out   <a
                         href="https://github.com/hannahcode/wordle"
@@ -72,8 +73,8 @@ export const AboutModal = ({ isOpen, handleClose }: Props) => {
                         href="https://github.com/roedoejet/wordle"
                         className="underline font-bold"
                       >
-                        my fork
-                      </a>{' '}and customize it for another language! If you're stuck and want to look up some Gitksan words, try <a href="https://mothertongues.org/gitksan" className="underline font-bold">the Gitksan online dictionary</a>{' which has words from a number of sources including the 1973 Lonnie Hindle & Bruce Rigsby dictionary. '}Or,
+                        Aidan Pine's fork
+                      </a>{' '}and customize it for another language! The words for this Wordle were sourced from <a href={CONFIG.wordListSourceLink} className="underline font-bold">{CONFIG.wordListSource}</a>. Or,
                       {' you can also '}
                       <a
                         href="https://www.powerlanguage.co.uk/wordle/"

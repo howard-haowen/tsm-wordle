@@ -1,8 +1,8 @@
-# Wordle Clone
+# Any-Language Wordle Clone
 
 ## Changes in this fork
 
-I've adapted this code to allow for simply adapting it to another language. In my case I adapted it to Gitksan. I've also added a script for publishing on GitHub Pages.
+I've adapted this code to allow for simply adapting it to another language. The wordlist and orthography (writing system) here are for the Gitksan language, but this repository is meant to be adapted to other languages. I've also added a script for publishing on GitHub Pages.
 
 _To adapt for your language:_
 
@@ -10,7 +10,9 @@ _To adapt for your language:_
 2. Change the file in `src/constants/wordlist.ts` to use your language's words.
 3. Change the file in `src/constants/validGuesses.ts` to include all valid guesses for your language.
 4. Change the file in `src/constants/config.ts` to include meta data about your language. If your language needs words longer or shorter than 5, you can set that in this file and also set the number of tries.
-5. Publish on GitHub Pages by changing the `homepage` key in `package.json` and running `npm run deploy`. Change the CNAME file in the deploy script in `package.json` first. See [here](https://github.com/gitname/react-gh-pages) for more details.
+5. Publish on GitHub Pages by changing the `homepage` key in `package.json` and running `npm run deploy`.
+
+There is a blog post coming on how to adapt this to your language! Stay tuned...
 
 ## On to the original stuff from @hannahcode...
 

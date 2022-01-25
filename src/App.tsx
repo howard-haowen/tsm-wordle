@@ -37,8 +37,10 @@ function App() {
 
   const TRACKING_ID = CONFIG.googleAnalytics; // YOUR_OWN_TRACKING_ID
 
-  ReactGA.initialize(TRACKING_ID);
-  ReactGA.pageview(window.location.pathname);
+  if (TRACKING_ID) {
+    ReactGA.initialize(TRACKING_ID);
+    ReactGA.pageview(window.location.pathname);
+  }
 
   useEffect(() => {
     saveGameStateToLocalStorage({ guesses, solution })
