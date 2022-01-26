@@ -70,7 +70,7 @@ export const AboutModal = ({ isOpen, handleClose }: Props) => {
                       >the original code</a> by <a href="https://www.hannahmariepark.com/" className="underline font-bold">Hannah Park</a>
                       {' '}or have a look at{' '}
                       <a
-                        href="https://github.com/roedoejet/wordle"
+                        href="https://github.com/roedoejet/AnyLanguage-Wordle"
                         className="underline font-bold"
                       >
                         Aidan Pine's fork
