@@ -6,5 +6,7 @@ export const CONFIG = {
     author: "YourNameHere", // Put your name here so people know who made this Wordle!
     authorWebsite: "YourLinkHere", // Put a link to your website or social media here
     wordListSource: "YourDictionarySource", // Describe the source material for your words here
-    wordListSourceLink: "YourDictionaryLink" // Put a link to the source material for your words here
+    wordListSourceLink: "YourDictionaryLink", // Put a link to the source material for your words here
+    shuffle: false, // whether to shuffle the words in the wordlist
+    normalization: 'NFC' // whether to apply Unicode normalization to words and orthography - options: 'NFC', 'NFD', 'NKFC', 'NKFD', false
 }
