@@ -12,7 +12,7 @@ _To adapt for your language:_
 4. Change the file in `src/constants/config.ts` to include meta data about your language. If your language needs words longer or shorter than 5, you can set that in this file and also set the number of tries.
 5. Publish on GitHub Pages by changing the `homepage` key in `package.json` and running `npm run deploy`.
 
-There is a blog post coming on how to adapt this to your language! Stay tuned...
+I also wrote a blog post that walks through this information in a bit more detail here: https://blog.mothertongues.org/wordle/
 
 ## On to the original stuff from @hannahcode...
 
