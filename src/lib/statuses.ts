@@ -4,13 +4,13 @@ import { ORTHOGRAPHY_PATTERN } from './tokenizer'
 
 export type CharStatus = 'absent' | 'present' | 'correct'
 
-export type CharValue = typeof ORTHOGRAPHY[number];
+export type CharValue = typeof ORTHOGRAPHY[number]
 
 export const getStatuses = (
   guesses: string[][]
 ): { [key: string]: CharStatus } => {
   const charObj: { [key: string]: CharStatus } = {}
-  const solutionChars = solution.split(ORTHOGRAPHY_PATTERN).filter(i => i)
+  const solutionChars = solution.split(ORTHOGRAPHY_PATTERN).filter((i) => i)
   guesses.forEach((word) => {
     word.forEach((letter, i) => {
       if (!solutionChars.includes(letter)) {
@@ -34,7 +34,7 @@ export const getStatuses = (
 }
 
 export const getGuessStatuses = (guess: string[]): CharStatus[] => {
-  const splitSolution = solution.split(ORTHOGRAPHY_PATTERN).filter(i => i)
+  const splitSolution = solution.split(ORTHOGRAPHY_PATTERN).filter((i) => i)
   const splitGuess = guess
 
   const solutionCharsTaken = splitSolution.map((_) => false)

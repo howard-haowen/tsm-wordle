@@ -2,7 +2,7 @@ import { KeyValue } from '../../lib/keyboard'
 import { getStatuses } from '../../lib/statuses'
 import { Key } from './Key'
 import { useEffect } from 'react'
-import { ORTHOGRAPHY } from '../../constants/orthography';
+import { ORTHOGRAPHY } from '../../constants/orthography'
 
 type Props = {
   onChar: (value: string) => void
@@ -48,16 +48,30 @@ export const Keyboard = ({ onChar, onDelete, onEnter, guesses }: Props) => {
   return (
     <div>
       <div className="flex justify-center mb-1">
-        {ORTHOGRAPHY.slice(0, Math.floor(ORTHOGRAPHY.length * .4)).map((char) => <Key value={char} onClick={onClick} status={charStatuses[char]} />)}
+        {ORTHOGRAPHY.slice(0, Math.floor(ORTHOGRAPHY.length * 0.4)).map(
+          (char) => (
+            <Key value={char} onClick={onClick} status={charStatuses[char]} />
+          )
+        )}
       </div>
       <div className="flex justify-center mb-1">
-        {ORTHOGRAPHY.slice(Math.floor(ORTHOGRAPHY.length * .4), Math.floor(ORTHOGRAPHY.length * .7)).map((char) => <Key value={char} onClick={onClick} status={charStatuses[char]} />)}
+        {ORTHOGRAPHY.slice(
+          Math.floor(ORTHOGRAPHY.length * 0.4),
+          Math.floor(ORTHOGRAPHY.length * 0.7)
+        ).map((char) => (
+          <Key value={char} onClick={onClick} status={charStatuses[char]} />
+        ))}
       </div>
       <div className="flex justify-center">
         <Key width={65.4} value="ENTER" onClick={onClick}>
           Enter
         </Key>
-        {ORTHOGRAPHY.slice(Math.floor(ORTHOGRAPHY.length * .7), ORTHOGRAPHY.length).map((char) => <Key value={char} onClick={onClick} status={charStatuses[char]} />)}
+        {ORTHOGRAPHY.slice(
+          Math.floor(ORTHOGRAPHY.length * 0.7),
+          ORTHOGRAPHY.length
+        ).map((char) => (
+          <Key value={char} onClick={onClick} status={charStatuses[char]} />
+        ))}
         <Key width={65.4} value="DELETE" onClick={onClick}>
           Delete
         </Key>

@@ -2,7 +2,7 @@ import { CharStatus } from '../../lib/statuses'
 import classnames from 'classnames'
 
 type Props = {
-  status: CharStatus,
+  status: CharStatus
   letter: string
 }
 

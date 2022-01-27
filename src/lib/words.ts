@@ -2,10 +2,7 @@ import { WORDS } from '../constants/wordlist'
 import { VALIDGUESSES } from '../constants/validGuesses'
 
 export const isWordInWordList = (word: string) => {
-  return (
-    WORDS.includes(word) ||
-    VALIDGUESSES.includes(word)
-  )
+  return WORDS.includes(word) || VALIDGUESSES.includes(word)
 }
 
 export const isWinningWord = (word: string) => {
