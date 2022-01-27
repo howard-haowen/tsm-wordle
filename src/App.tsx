@@ -17,6 +17,7 @@ import {
 
 import { CONFIG } from './constants/config'
 import ReactGA from 'react-ga'
+import '@bcgov/bc-sans/css/BCSans.css'
 const ALERT_TIME_MS = 2000
 
 function App() {
