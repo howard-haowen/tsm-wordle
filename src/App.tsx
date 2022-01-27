@@ -49,7 +49,7 @@ function App() {
 
   const TRACKING_ID = CONFIG.googleAnalytics // YOUR_OWN_TRACKING_ID
 
-  if (TRACKING_ID) {
+  if (TRACKING_ID && process.env.NODE_ENV !== 'test') {
     ReactGA.initialize(TRACKING_ID)
     ReactGA.pageview(window.location.pathname)
   }
