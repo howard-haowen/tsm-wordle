@@ -4,6 +4,8 @@ import {
   saveStatsToLocalStorage,
 } from './localStorage'
 
+import { CONFIG } from '../constants/config'
+
 // In stats array elements 0-5 are successes in 1-6 trys
 
 export const addStatsForCompletedGame = (
@@ -15,7 +17,7 @@ export const addStatsForCompletedGame = (
 
   stats.totalGames += 1
 
-  if (count > 5) {
+  if (count > CONFIG.tries - 1) {
     // A fail situation
     stats.currentStreak = 0
     stats.gamesFailed += 1
