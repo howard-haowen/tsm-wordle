@@ -3,6 +3,7 @@ import App from './App'
 import { ORTHOGRAPHY } from './constants/orthography'
 import { WORDS } from './constants/wordlist'
 import { ORTHOGRAPHY_PATTERN } from './lib/tokenizer'
+import { CONFIG } from './constants/config'
 
 test('renders Not Wordle', () => {
   render(<App />)
@@ -17,4 +18,8 @@ test('no surprise characters', () => {
   splitWords.forEach((word) => {
     expect(ORTHOGRAPHY).toEqual(expect.arrayContaining(word))
   })
+})
+
+test('date is valid', () => {
+  expect(new Date(CONFIG.startDate).valueOf()).toBeTruthy()
 })
