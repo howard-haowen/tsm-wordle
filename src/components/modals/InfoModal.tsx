@@ -11,7 +11,7 @@ type Props = {
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
   const { t, i18n } = useTranslation()
   return (
-    <BaseModal title="How to play" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal title={t('howToPlay')} isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500">
         {t('instructions', { tries: CONFIG.tries })}
       </p>

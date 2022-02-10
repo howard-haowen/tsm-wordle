@@ -14,6 +14,8 @@ _To adapt for your language (the basics):_
 
 For more information, including how to localize the interface to your language, visit the blog article: https://blog.mothertongues.org/wordle/.
 
+The interface is translated by default in both English and Spanish - other translations are very welcome!
+
 ## On to the original stuff from @hannahcode...
 
 - Go play the real Wordle [here](https://www.powerlanguage.co.uk/wordle/)

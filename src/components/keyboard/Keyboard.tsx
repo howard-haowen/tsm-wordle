@@ -3,6 +3,7 @@ import { getStatuses } from '../../lib/statuses'
 import { Key } from './Key'
 import { useEffect } from 'react'
 import { ORTHOGRAPHY } from '../../constants/orthography'
+import { useTranslation } from 'react-i18next'
 
 type Props = {
   onChar: (value: string) => void
@@ -12,6 +13,7 @@ type Props = {
 }
 
 export const Keyboard = ({ onChar, onDelete, onEnter, guesses }: Props) => {
+  const { t, i18n } = useTranslation()
   const charStatuses = getStatuses(guesses)
 
   const onClick = (value: KeyValue) => {
@@ -64,7 +66,7 @@ export const Keyboard = ({ onChar, onDelete, onEnter, guesses }: Props) => {
       </div>
       <div className="flex justify-center">
         <Key width={65.4} value="ENTER" onClick={onClick}>
-          Enter
+          {t('enterKey')}
         </Key>
         {ORTHOGRAPHY.slice(
           Math.floor(ORTHOGRAPHY.length * 0.7),
@@ -73,7 +75,7 @@ export const Keyboard = ({ onChar, onDelete, onEnter, guesses }: Props) => {
           <Key value={char} onClick={onClick} status={charStatuses[char]} />
         ))}
         <Key width={65.4} value="DELETE" onClick={onClick}>
-          Delete
+          {t('deleteKey')}
         </Key>
       </div>
     </div>
