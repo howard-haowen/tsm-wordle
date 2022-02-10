@@ -29,13 +29,21 @@ export const StatsModal = ({
   const { t, i18n } = useTranslation()
   if (gameStats.totalGames <= 0) {
     return (
-      <BaseModal title={t('statistics')} isOpen={isOpen} handleClose={handleClose}>
+      <BaseModal
+        title={t('statistics')}
+        isOpen={isOpen}
+        handleClose={handleClose}
+      >
         <StatBar gameStats={gameStats} />
       </BaseModal>
     )
   }
   return (
-    <BaseModal title={t('statistics')} isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal
+      title={t('statistics')}
+      isOpen={isOpen}
+      handleClose={handleClose}
+    >
       <StatBar gameStats={gameStats} />
       <h4 className="text-lg leading-6 font-medium text-gray-900">
         {t('guessDistribution')}
