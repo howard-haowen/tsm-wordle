@@ -26,7 +26,7 @@ export const StatsModal = ({
   isGameWon,
   handleShare,
 }: Props) => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   if (gameStats.totalGames <= 0) {
     return (
       <BaseModal

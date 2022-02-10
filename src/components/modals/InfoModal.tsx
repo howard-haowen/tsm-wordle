@@ -9,7 +9,7 @@ type Props = {
 }
 
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   return (
     <BaseModal title={t('howToPlay')} isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500">

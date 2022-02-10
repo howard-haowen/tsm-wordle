@@ -21,7 +21,7 @@ const StatItem = ({
 }
 
 export const StatBar = ({ gameStats }: Props) => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   return (
     <div className="flex justify-center my-2">
       <StatItem label={t('totalTries')} value={gameStats.totalGames} />

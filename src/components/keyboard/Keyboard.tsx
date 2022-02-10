@@ -13,7 +13,7 @@ type Props = {
 }
 
 export const Keyboard = ({ onChar, onDelete, onEnter, guesses }: Props) => {
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const charStatuses = getStatuses(guesses)
 
   const onClick = (value: KeyValue) => {
