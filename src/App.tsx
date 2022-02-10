@@ -1,5 +1,6 @@
 import { InformationCircleIcon } from '@heroicons/react/outline'
 import { ChartBarIcon } from '@heroicons/react/outline'
+import { TranslateIcon } from '@heroicons/react/outline'
 import { useState, useEffect } from 'react'
 import { Alert } from './components/alerts/Alert'
 import { Grid } from './components/grid/Grid'
@@ -7,6 +8,7 @@ import { Keyboard } from './components/keyboard/Keyboard'
 import { AboutModal } from './components/modals/AboutModal'
 import { InfoModal } from './components/modals/InfoModal'
 import { StatsModal } from './components/modals/StatsModal'
+import { TranslateModal } from './components/modals/TranslateModal'
 import { WIN_MESSAGES } from './constants/strings'
 import { isWordInWordList, isWinningWord, solution } from './lib/words'
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
@@ -18,15 +20,19 @@ import {
 import { CONFIG } from './constants/config'
 import ReactGA from 'react-ga'
 import '@bcgov/bc-sans/css/BCSans.css'
+import './i18n'
+import { withTranslation, WithTranslation } from 'react-i18next'
+
 const ALERT_TIME_MS = 2000
 
-function App() {
+const App: React.FC<WithTranslation> = ({ t, i18n }) => {
   const [currentGuess, setCurrentGuess] = useState<Array<string>>([])
   const [isGameWon, setIsGameWon] = useState(false)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
   const [isNotEnoughLetters, setIsNotEnoughLetters] = useState(false)
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
+  const [isI18nModalOpen, setIsI18nModalOpen] = useState(false)
   const [isWordNotFoundAlertOpen, setIsWordNotFoundAlertOpen] = useState(false)
   const [isGameLost, setIsGameLost] = useState(false)
   const [successAlert, setSuccessAlert] = useState('')
@@ -41,7 +47,7 @@ function App() {
     if (gameWasWon) {
       setIsGameWon(true)
     }
-    if (loaded.guesses.length === 6 && !gameWasWon) {
+    if (loaded.guesses.length === CONFIG.tries && !gameWasWon) {
       setIsGameLost(true)
     }
     return loaded.guesses
@@ -129,6 +135,15 @@ function App() {
       }
     }
   }
+  let translateElement = <div></div>
+  if (CONFIG.availableLangs.length > 1) {
+    translateElement = (
+      <TranslateIcon
+        className="h-6 w-6 cursor-pointer"
+        onClick={() => setIsI18nModalOpen(true)}
+      />
+    )
+  }
 
   return (
     <div className="py-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -136,6 +151,7 @@ function App() {
         <h1 className="text-xl grow font-bold">
           Not Wordle - {CONFIG.language}
         </h1>
+        {translateElement}
         <InformationCircleIcon
           className="h-6 w-6 cursor-pointer"
           onClick={() => setIsInfoModalOpen(true)}
@@ -152,6 +168,10 @@ function App() {
         onEnter={onEnter}
         guesses={guesses}
       />
+      <TranslateModal
+        isOpen={isI18nModalOpen}
+        handleClose={() => setIsI18nModalOpen(false)}
+      />
       <InfoModal
         isOpen={isInfoModalOpen}
         handleClose={() => setIsInfoModalOpen(false)}
@@ -164,7 +184,7 @@ function App() {
         isGameLost={isGameLost}
         isGameWon={isGameWon}
         handleShare={() => {
-          setSuccessAlert('Game copied to clipboard')
+          setSuccessAlert(t('gameCopied'))
           return setTimeout(() => setSuccessAlert(''), ALERT_TIME_MS)
         }}
       />
@@ -178,12 +198,12 @@ function App() {
         className="mx-auto mt-8 flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 select-none"
         onClick={() => setIsAboutModalOpen(true)}
       >
-        About this game
+        {t('about')}
       </button>
 
-      <Alert message="Not enough letters" isOpen={isNotEnoughLetters} />
-      <Alert message="Word not found" isOpen={isWordNotFoundAlertOpen} />
-      <Alert message={`The word was ${solution}`} isOpen={isGameLost} />
+      <Alert message={t('notEnoughLetters')} isOpen={isNotEnoughLetters} />
+      <Alert message={t('wordNotFound')} isOpen={isWordNotFoundAlertOpen} />
+      <Alert message={t('solution', { solution })} isOpen={isGameLost} />
       <Alert
         message={successAlert}
         isOpen={successAlert !== ''}
@@ -193,4 +213,4 @@ function App() {
   )
 }
 
-export default App
+export default withTranslation()(App)

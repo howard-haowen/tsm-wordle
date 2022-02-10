@@ -1,0 +1,48 @@
+{
+    "about": "Acerca de este juego",
+    "enterKey": "Enviar",
+    "deleteKey": "Eliminar",
+    "notEnoughLetters": "No hay suficientes letras",
+    "wordNotFound": "Palabra no encontrada",
+    "solution": "La palabra era {{solution}}",
+    "gameCopied": "Juego copiado al portapapeles",
+    "howToPlay": "Cómo jugar",
+    "instructions": "Adivina la palabra en {{tries}} intentos. Después de cada intento, el color de las letras cambiará para mostrar qué tan cerca estás de acertar la palabra.",
+    "pickYourLanguage": "Elige un idioma",
+    "correctSpotInstructions": "La letra T se encuentra en la palabra y está en la posición correcta.",
+    "wrongSpotInstructions": "La letra N se encuentra en la palabra pero en la posición incorrecta.",
+    "notInWordInstructions": "La letra O no se encuentra en la palabra.",
+    "guessDistribution": "Distribución de aciertos",
+    "statistics": "Estadísticas",
+    "totalTries": "Jugadas",
+    "successRate": "Victorias",
+    "currentStreak": "Racha actual",
+    "bestStreak": "Mejor racha",
+    "newWordCountdown": "Nueva palabra en",
+    "share": "Compartir",
+    "firstExampleWord": [
+        "T",
+        "R",
+        "A",
+        "M",
+        "O"
+    ],
+    "secondExampleWord": [
+        "G",
+        "A",
+        "N",
+        "A",
+        "S"
+    ],
+    "thirdExampleWord": [
+        "R",
+        "E",
+        "T",
+        "O",
+        "S"
+    ],
+    "aboutAuthorSentence": "Este es un clon de código abierto del juego Wordle adaptado a {{language}} por <3>{{author}}</3>. ",
+    "aboutCodeSentence": "Echa un vistazo al <1>código original</1> de <3>Hannah Park</3> o echa un vistazo al <5>fork de Aidan Pine</5> y personalízalo para otro idioma. ",
+    "aboutDataSentence": "Las palabras para este juego se obtuvieron de <1>{{wordListSource}}</1>. ",
+    "aboutOriginalSentence": "También puedes jugar la original <1>aquí</1>"
+}

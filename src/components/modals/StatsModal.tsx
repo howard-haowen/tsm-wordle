@@ -5,6 +5,7 @@ import { GameStats } from '../../lib/localStorage'
 import { shareStatus } from '../../lib/share'
 import { tomorrow } from '../../lib/words'
 import { BaseModal } from './BaseModal'
+import { useTranslation } from 'react-i18next'
 
 type Props = {
   isOpen: boolean
@@ -25,24 +26,33 @@ export const StatsModal = ({
   isGameWon,
   handleShare,
 }: Props) => {
+  const { t, i18n } = useTranslation()
   if (gameStats.totalGames <= 0) {
     return (
-      <BaseModal title="Statistics" isOpen={isOpen} handleClose={handleClose}>
+      <BaseModal
+        title={t('statistics')}
+        isOpen={isOpen}
+        handleClose={handleClose}
+      >
         <StatBar gameStats={gameStats} />
       </BaseModal>
     )
   }
   return (
-    <BaseModal title="Statistics" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal
+      title={t('statistics')}
+      isOpen={isOpen}
+      handleClose={handleClose}
+    >
       <StatBar gameStats={gameStats} />
       <h4 className="text-lg leading-6 font-medium text-gray-900">
-        Guess Distribution
+        {t('guessDistribution')}
       </h4>
       <Histogram gameStats={gameStats} />
       {(isGameLost || isGameWon) && (
         <div className="mt-5 sm:mt-6 columns-2">
           <div>
-            <h5>New word in</h5>
+            <h5>{t('newWordIn')}</h5>
             <Countdown
               className="text-lg font-medium text-gray-900"
               date={tomorrow}
@@ -57,7 +67,7 @@ export const StatsModal = ({
               handleShare()
             }}
           >
-            Share
+            {t('share')}
           </button>
         </div>
       )}
