@@ -18,9 +18,12 @@ import {
 import { CONFIG } from './constants/config'
 import ReactGA from 'react-ga'
 import '@bcgov/bc-sans/css/BCSans.css'
+import './i18n'
+import { withTranslation, WithTranslation } from 'react-i18next'
+
 const ALERT_TIME_MS = 2000
 
-function App() {
+const App: React.FC<WithTranslation> = ({ t, i18n }) => {
   const [currentGuess, setCurrentGuess] = useState<Array<string>>([])
   const [isGameWon, setIsGameWon] = useState(false)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
@@ -164,7 +167,7 @@ function App() {
         isGameLost={isGameLost}
         isGameWon={isGameWon}
         handleShare={() => {
-          setSuccessAlert('Game copied to clipboard')
+          setSuccessAlert(t('gameCopied'))
           return setTimeout(() => setSuccessAlert(''), ALERT_TIME_MS)
         }}
       />
@@ -178,12 +181,12 @@ function App() {
         className="mx-auto mt-8 flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 select-none"
         onClick={() => setIsAboutModalOpen(true)}
       >
-        About this game
+        {t('about')}
       </button>
 
-      <Alert message="Not enough letters" isOpen={isNotEnoughLetters} />
-      <Alert message="Word not found" isOpen={isWordNotFoundAlertOpen} />
-      <Alert message={`The word was ${solution}`} isOpen={isGameLost} />
+      <Alert message={t('notEnoughLetters')} isOpen={isNotEnoughLetters} />
+      <Alert message={t('wordNotFound')} isOpen={isWordNotFoundAlertOpen} />
+      <Alert message={t('solution', { solution })} isOpen={isGameLost} />
       <Alert
         message={successAlert}
         isOpen={successAlert !== ''}
@@ -193,4 +196,4 @@ function App() {
   )
 }
 
-export default App
+export default withTranslation()(App)
