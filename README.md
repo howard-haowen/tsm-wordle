@@ -4,6 +4,18 @@
 
 I've adapted this code to allow for simply adapting it to another language. The wordlist and orthography (writing system) here are for the Gitksan language, but this repository is meant to be adapted to other languages. I've also added a script for publishing on GitHub Pages.
 
+_Summary of changes_
+
+- Allow letters in the "orthography.ts" to be digraphs or multigraphs (letters that are more than one character)
+- Allow more or less atempts than 6
+- Allow the length of words to be more or less than 5
+- Added a configuration file to define language-specific metadata
+- Added functionality for free deployment to GitHub Pages
+- Dynamically render the keyboard based on the defined orthography
+- Use Unicode normalization by default
+- Use BC Sans open source font to better render Indigenous language orthographies in BC, Canada. See the blog to change the font
+- Complete localization/translateability of the interface using react-i18next
+
 _To adapt for your language (the basics):_
 
 1. Change the file in `src/constants/orthography.ts` to use your language's writing system.
@@ -14,7 +26,9 @@ _To adapt for your language (the basics):_
 
 For more information, including how to localize the interface to your language, visit the blog article: https://blog.mothertongues.org/wordle/.
 
-The interface is translated by default in both English and Spanish - other translations are very welcome!
+The interface is translated by default in both English and Spanish - other translations are very welcome! 
+
+Thanks to Carolyn O'Meara (https://github.com/ckomeara) for providing the Spanish translation.
 
 ## On to the original stuff from @hannahcode...
 
