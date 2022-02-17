@@ -52,7 +52,12 @@ export const Keyboard = ({ onChar, onDelete, onEnter, guesses }: Props) => {
       <div className="flex justify-center mb-1">
         {ORTHOGRAPHY.slice(0, Math.floor(ORTHOGRAPHY.length * 0.4)).map(
           (char) => (
-            <Key key={char} value={char} onClick={onClick} status={charStatuses[char]} />
+            <Key
+              key={char}
+              value={char}
+              onClick={onClick}
+              status={charStatuses[char]}
+            />
           )
         )}
       </div>
@@ -61,7 +66,12 @@ export const Keyboard = ({ onChar, onDelete, onEnter, guesses }: Props) => {
           Math.floor(ORTHOGRAPHY.length * 0.4),
           Math.floor(ORTHOGRAPHY.length * 0.7)
         ).map((char) => (
-          <Key key={char} value={char} onClick={onClick} status={charStatuses[char]} />
+          <Key
+            key={char}
+            value={char}
+            onClick={onClick}
+            status={charStatuses[char]}
+          />
         ))}
       </div>
       <div className="flex justify-center">
@@ -72,7 +82,12 @@ export const Keyboard = ({ onChar, onDelete, onEnter, guesses }: Props) => {
           Math.floor(ORTHOGRAPHY.length * 0.7),
           ORTHOGRAPHY.length
         ).map((char) => (
-          <Key key={char} value={char} onClick={onClick} status={charStatuses[char]} />
+          <Key
+            key={char}
+            value={char}
+            onClick={onClick}
+            status={charStatuses[char]}
+          />
         ))}
         <Key key="deleteKey" width={65.4} value="DELETE" onClick={onClick}>
           {t('deleteKey')}
