@@ -17,7 +17,7 @@ export const TranslateModal = ({ isOpen, handleClose }: Props) => {
 
   const createOption = (code: string, text: string) => {
     return (
-      <div>
+      <div key={code}>
         <label>{text}</label>
         <input
           className="m-2"
