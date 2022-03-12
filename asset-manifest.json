@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/AnyLanguage-Wordle/static/css/main.151a03bd.css",
-    "main.js": "/AnyLanguage-Wordle/static/js/main.3ab6fa33.js",
-    "static/js/787.9fd50364.chunk.js": "/AnyLanguage-Wordle/static/js/787.9fd50364.chunk.js",
-    "static/media/BCSans-Bold.woff": "/AnyLanguage-Wordle/static/media/BCSans-Bold.252ecf87ea37c93b293c.woff",
-    "static/media/BCSans-BoldItalic.woff": "/AnyLanguage-Wordle/static/media/BCSans-BoldItalic.73ed5137b2c4a42b754f.woff",
-    "static/media/BCSans-Italic.woff": "/AnyLanguage-Wordle/static/media/BCSans-Italic.9c3be03a06d30a6ecff0.woff",
-    "static/media/BCSans-Regular.woff": "/AnyLanguage-Wordle/static/media/BCSans-Regular.0079ea8e42d4e81a13d2.woff",
-    "index.html": "/AnyLanguage-Wordle/index.html",
-    "static/media/getFetch.cjs": "/AnyLanguage-Wordle/static/media/getFetch.c780682470504fffbd04.cjs",
-    "main.151a03bd.css.map": "/AnyLanguage-Wordle/static/css/main.151a03bd.css.map",
-    "main.3ab6fa33.js.map": "/AnyLanguage-Wordle/static/js/main.3ab6fa33.js.map",
-    "787.9fd50364.chunk.js.map": "/AnyLanguage-Wordle/static/js/787.9fd50364.chunk.js.map"
+    "main.css": "/tsm-wordle/static/css/main.b178f10c.css",
+    "main.js": "/tsm-wordle/static/js/main.a18df633.js",
+    "static/js/787.4aed486d.chunk.js": "/tsm-wordle/static/js/787.4aed486d.chunk.js",
+    "static/media/BCSans-Bold.woff": "/tsm-wordle/static/media/BCSans-Bold.252ecf87ea37c93b293c.woff",
+    "static/media/BCSans-BoldItalic.woff": "/tsm-wordle/static/media/BCSans-BoldItalic.73ed5137b2c4a42b754f.woff",
+    "static/media/BCSans-Italic.woff": "/tsm-wordle/static/media/BCSans-Italic.9c3be03a06d30a6ecff0.woff",
+    "static/media/BCSans-Regular.woff": "/tsm-wordle/static/media/BCSans-Regular.0079ea8e42d4e81a13d2.woff",
+    "index.html": "/tsm-wordle/index.html",
+    "static/media/getFetch.cjs": "/tsm-wordle/static/media/getFetch.c780682470504fffbd04.cjs",
+    "main.b178f10c.css.map": "/tsm-wordle/static/css/main.b178f10c.css.map",
+    "main.a18df633.js.map": "/tsm-wordle/static/js/main.a18df633.js.map",
+    "787.4aed486d.chunk.js.map": "/tsm-wordle/static/js/787.4aed486d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.151a03bd.css",
-    "static/js/main.3ab6fa33.js"
+    "static/css/main.b178f10c.css",
+    "static/js/main.a18df633.js"
   ]
 }
