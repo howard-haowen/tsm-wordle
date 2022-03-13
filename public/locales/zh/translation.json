@@ -7,7 +7,7 @@
     "solution": "正解為 {{solution}}",
     "gameCopied": "已將您的輝煌戰績複製至剪貼簿，開始分享吧！",
     "howToPlay": "遊戲規則",
-    "instructions": "您總共有 {{tries}} 次猜測單字的機會，所有單字都只有一個音節，並且沒有聲調符號。每輸入一個單字，方塊將會改變顏色，透過顏色的變化您將能推測正解。",
+    "instructions": "您總共有 {{tries}} 次猜測單字的機會，所有單字都只有一個音節，並省略聲調符號。每輸入一個單字，方塊將會改變顏色，透過顏色的變化您將能推測正解。",
     "pickYourLanguage": "選擇語言",
     "correctSpotInstructions": "字母 W 出現在正解當中，並且在正確的位置。",
     "wrongSpotInstructions": "字母 L 出現在正解當中，但不在正確的位置。",
