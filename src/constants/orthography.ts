@@ -25,6 +25,7 @@ export const ORTHOGRAPHY = [
   'tsh',
   's',
   'j',
+  '-',
 ]
 
 if (CONFIG.normalization) {
