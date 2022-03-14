@@ -1,5 +1,5 @@
 export const CONFIG = {
-  tries: 6, // This changes how many tries you get to finish the wordle
+  tries: 7, // This changes how many tries you get to finish the wordle
   language: 'Tâi-lô \n台灣閩南語羅馬字 (Taiwanese Southern Min)', // This changes the display name for your language
   wordLength: 6, // This sets how long each word is based on how many characters (as defined in orthography.ts) are in each word
   author: 'Haowen Jiang', // Put your name here so people know who made this Wordle!
