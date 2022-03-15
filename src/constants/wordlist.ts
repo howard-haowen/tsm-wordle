@@ -15,7 +15,6 @@ export const WORDS = [
   'lau-tua',
   'long-hui',
   'sui-khui',
-  'tsok-kun',
   'nai-sim',
   'bin-bang',
   'khang-tshiu',
