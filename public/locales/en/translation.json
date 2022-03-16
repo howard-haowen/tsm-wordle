@@ -1,5 +1,6 @@
 {
     "about": "About this game",
+    "gameName": "Taiwanese Minnan in Tâi-lô",
     "enterKey": "Enter",
     "deleteKey": "Delete",
     "notEnoughLetters": "Not enough letters",
@@ -20,26 +21,97 @@
     "bestStreak": "Best streak",
     "newWordCountdown": "New word in",
     "share": "Share",
-    "firstExampleWord": [
-        "W",
-        "E",
-        "A",
-        "R",
-        "Y"
+    "winMessages": [
+        "Great Job!",
+        "Awesome",
+        "Well done!"
     ],
-    "secondExampleWord": [
-        "P",
-        "I",
-        "L",
-        "O",
-        "T"
+    "firstExampleWord": [{
+            "letter": "K",
+            "highlight": true
+        },
+        {
+            "letter": "U",
+            "highlight": false
+        },
+        {
+            "letter": "I",
+            "highlight": false
+        },
+        {
+            "letter": "-",
+            "highlight": false
+        },
+        {
+            "letter": "K",
+            "highlight": false
+        },
+        {
+            "letter": "A",
+            "highlight": false
+        },
+        {
+            "letter": "NG",
+            "highlight": false
+        }              
     ],
-    "thirdExampleWord": [
-        "V",
-        "A",
-        "G",
-        "U",
-        "E"
+    "secondExampleWord": [{
+            "letter": "PH",
+            "highlight": false
+        },
+        {
+            "letter": "A",
+            "highlight": false
+        },
+        {
+            "letter": "I",
+            "highlight": false
+        },
+        {
+            "letter": "NN",
+            "highlight": true
+        },
+        {
+            "letter": "-",
+            "highlight": false
+        },
+        {
+            "letter": "S",
+            "highlight": false
+        },
+        {
+            "letter": "E",
+            "highlight": false
+        }                
+    ],
+    "thirdExampleWord": [{
+            "letter": "K",
+            "highlight": false
+        },
+        {
+            "letter": "U",
+            "highlight": false
+        },
+        {
+            "letter": "T",
+            "highlight": false
+        },
+        {
+            "letter": "-",
+            "highlight": false
+        },
+        {
+            "letter": "L",
+            "highlight": false
+        },
+        {
+            "letter": "A",
+            "highlight": false
+        },
+        {
+            "letter": "T",
+            "highlight": true
+        }
     ],
     "aboutAuthorSentence": "This is an open source clone of the game Wordle adapted to {{language}} by <3>{{author}}</3>. ",
     "aboutCodeSentence": "Check out <1>the original code</1> by <3>Hannah Park</3> or have a look at <5>Aidan Pine's fork</5> and customize it for another language! ",
