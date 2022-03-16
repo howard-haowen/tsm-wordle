@@ -1,17 +1,18 @@
 {
     "about": "關於本遊戲",
+    "gameName": "Tâi-lô, 台羅",
     "enterKey": "輸入",
     "deleteKey": "刪除",
-    "notEnoughLetters": "字母數不足",
+    "notEnoughLetters": "字母數不足，請填滿方塊",
     "wordNotFound": "查無此單詞",
     "solution": "正解為 {{solution}}",
     "gameCopied": "已將您的輝煌戰績複製至剪貼簿，開始分享吧！",
     "howToPlay": "遊戲規則",
-    "instructions": "您總共有 {{tries}} 次猜測單詞的機會，所有單詞都是雙音節詞，輸入時省略聲調符號。例如，「姑丈」的正確台羅為「koo-tiūnn」，在本遊戲中只需先後輸入「k oo - t i u nn」。每輸入一個單詞，方塊將會改變顏色，透過顏色的變化您將能推測正解。",
+    "instructions": "您總共有 {{tries}} 次猜測單詞的機會，所有單詞都是雙音節詞，輸入時省略聲調符號。例如，「姑丈」的正確台羅為「koo-tiūnn」，在本遊戲中只需先後輸入「k oo - t i u nn」。輸入的詞必須填滿所有方塊。每輸入一個單詞，方塊將會改變顏色，透過顏色的變化您將能推測正解。",
     "pickYourLanguage": "選擇語言",
-    "correctSpotInstructions": "字母 W 出現在正解當中，並且在正確的位置。",
-    "wrongSpotInstructions": "字母 L 出現在正解當中，但不在正確的位置。",
-    "notInWordInstructions": "字母 U 不在正解當中。",
+    "correctSpotInstructions": "字母 K 出現在正解當中，並且在正確的位置。",
+    "wrongSpotInstructions": "字母 NN 出現在正解當中，但不在正確的位置。",
+    "notInWordInstructions": "字母 T 不在正解當中。",
     "guessDistribution": "猜詞分佈",
     "statistics": "統計",
     "totalTries": "總猜測次數",
@@ -20,26 +21,97 @@
     "bestStreak": "最佳連續獲勝次數",
     "newWordCountdown": "距離下個新單詞出現還有",
     "share": "分享",
-    "firstExampleWord": [
-        "Ｗ",
-        "E",
-        "A",
-        "R",
-        "Y"
+    "winMessages": [
+        "太棒了！",
+        "完美！",
+        "做得好！"
     ],
-    "secondExampleWord": [
-        "P",
-        "I",
-        "L",
-        "O",
-        "T"
+    "firstExampleWord": [{
+            "letter": "K",
+            "highlight": true
+        },
+        {
+            "letter": "U",
+            "highlight": false
+        },
+        {
+            "letter": "I",
+            "highlight": false
+        },
+        {
+            "letter": "-",
+            "highlight": false
+        },
+        {
+            "letter": "K",
+            "highlight": false
+        },
+        {
+            "letter": "A",
+            "highlight": false
+        },
+        {
+            "letter": "NG",
+            "highlight": false
+        }              
     ],
-    "thirdExampleWord": [
-        "V",
-        "A",
-        "G",
-        "U",
-        "E"
+    "secondExampleWord": [{
+            "letter": "PH",
+            "highlight": false
+        },
+        {
+            "letter": "A",
+            "highlight": false
+        },
+        {
+            "letter": "I",
+            "highlight": false
+        },
+        {
+            "letter": "NN",
+            "highlight": true
+        },
+        {
+            "letter": "-",
+            "highlight": false
+        },
+        {
+            "letter": "S",
+            "highlight": false
+        },
+        {
+            "letter": "E",
+            "highlight": false
+        }                
+    ],
+    "thirdExampleWord": [{
+            "letter": "K",
+            "highlight": false
+        },
+        {
+            "letter": "U",
+            "highlight": false
+        },
+        {
+            "letter": "T",
+            "highlight": false
+        },
+        {
+            "letter": "-",
+            "highlight": false
+        },
+        {
+            "letter": "L",
+            "highlight": false
+        },
+        {
+            "letter": "A",
+            "highlight": false
+        },
+        {
+            "letter": "T",
+            "highlight": true
+        }
     ],
     "aboutAuthorSentence": "本遊戲源自 Wordle 開源專案，由<3>{{author}}</3>改編為台灣閩南語羅馬字版本。",
     "aboutCodeSentence": "原專案作者為<3>Hannah Park</3>，原始碼在<1>the original code</1>。本遊戲的開發依據為<5>Aidan Pine's fork</5>。",
