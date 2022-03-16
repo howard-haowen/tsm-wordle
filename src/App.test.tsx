@@ -6,9 +6,9 @@ import { ORTHOGRAPHY_PATTERN } from './lib/tokenizer'
 import { CONFIG } from './constants/config'
 import chalk from 'chalk'
 
-test('renders Not Wordle', () => {
+test('renders game', () => {
   render(<App />)
-  const linkElement = screen.getByText(/Not Wordle/i)
+  const linkElement = screen.getByText(/gameName/i)
   expect(linkElement).toBeInTheDocument()
 })
 
