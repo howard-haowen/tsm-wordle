@@ -51,7 +51,6 @@ const App: React.FC<WithTranslation> = ({ t, i18n }) => {
     }
     return loaded.guesses
   })
-  const WIN_MESSAGES = t('winMessages', { returnObjects: true })
   const TRACKING_ID = CONFIG.googleAnalytics
 
   if (TRACKING_ID && process.env.NODE_ENV !== 'test') {
@@ -66,6 +65,7 @@ const App: React.FC<WithTranslation> = ({ t, i18n }) => {
 
   useEffect(() => {
     if (isGameWon) {
+      const WIN_MESSAGES = t('winMessages', { returnObjects: true })
       setSuccessAlert(
         WIN_MESSAGES[Math.floor(Math.random() * WIN_MESSAGES.length)]
       )
@@ -79,7 +79,7 @@ const App: React.FC<WithTranslation> = ({ t, i18n }) => {
         setIsStatsModalOpen(true)
       }, ALERT_TIME_MS)
     }
-  }, [isGameWon, isGameLost, WIN_MESSAGES])
+  }, [isGameWon, isGameLost, t])
 
   const onChar = (value: string) => {
     if (
